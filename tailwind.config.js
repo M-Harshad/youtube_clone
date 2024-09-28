@@ -26,7 +26,7 @@ export default {
         },
         fontSize: {
           SmallSideNav: '10px',
-          NormSideNav: '16px'
+          NormSideNav: '14px'
         }
   },
   plugins: [],
