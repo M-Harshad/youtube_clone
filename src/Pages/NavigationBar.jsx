@@ -7,21 +7,21 @@ import { MdKeyboardVoice } from "react-icons/md";
 import { BsPersonCircle } from "react-icons/bs";
 import SearchInput from "../components/SearchInput";
 import { IoMdClose } from "react-icons/io";
-import { GoHome, } from "react-icons/go";
-import { MdOutlineSubscriptions,  } from "react-icons/md";
+import { GoHome } from "react-icons/go";
+import { MdOutlineSubscriptions } from "react-icons/md";
 import { SiYoutubeshorts } from "react-icons/si";
-import { BiSolidVideos } from "react-icons/bi"
+import { BiSolidVideos } from "react-icons/bi";
 import { IoIosTrendingUp } from "react-icons/io";
 import { RiShoppingBag4Line } from "react-icons/ri";
 import { IoIosMusicalNote } from "react-icons/io";
-import { MdOutlineLocalMovies } from "react-icons/md";
-import { MdOutlineLiveTv } from "react-icons/md";
+import { MdOutlineLocalMovies, MdOutlineLiveTv, MdOutlineFlag } from "react-icons/md";
 import { SiYoutubegaming } from "react-icons/si";
-import { FaNewspaper } from "react-icons/fa";
+import { FaNewspaper, FaRegLightbulb, FaPodcast, } from "react-icons/fa";
 import { IoTrophyOutline } from "react-icons/io5";
-import { FaRegLightbulb } from "react-icons/fa";
 import { GiHanger } from "react-icons/gi";
-import { FaPodcast } from "react-icons/fa";
+import { CiSettings } from "react-icons/ci";
+import { GoQuestion } from "react-icons/go";
+import { IoMdInformationCircleOutline } from "react-icons/io";
 
 function NavigationBar() {
   const [expand, setExpand] = useState(true);
@@ -29,100 +29,56 @@ function NavigationBar() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const MainSideContent = [
-    {
-      name : 'Home',
-      path : '/',
-      activeFalse : <GoHome className="w-7 h-7 text-text" />,
-    },
-    {
-      name : 'Shorts',
-      path : '/shorts',
-      activeFalse : <SiYoutubeshorts className="w-7 h-7 text-text" />,
-    },
-    {
-      name : 'Subs',
-      path : '/subs',
-      activeFalse : <MdOutlineSubscriptions className="w-7 h-7 text-text" />,
-    },
-    {
-      name : 'You',
-      path : '/You',
-      activeFalse : <BiSolidVideos className="w-7 h-7 text-text" />,
-    },
-
-  ]; 
+    { name: 'Home', path: '/', activeFalse: <GoHome className="w-7 h-7 text-text" /> },
+    { name: 'Shorts', path: '/shorts', activeFalse: <SiYoutubeshorts className="w-7 h-7 text-text" /> },
+    { name: 'Subs', path: '/subs', activeFalse: <MdOutlineSubscriptions className="w-7 h-7 text-text" /> },
+    { name: 'You', path: '/You', activeFalse: <BiSolidVideos className="w-7 h-7 text-text" /> },
+  ];
 
   const explore = [
-    {name: 'Trending',
-     pic: <IoIosTrendingUp className="w-6 h-6 text-text"/>
-    },
-    {name: 'Shopping',
-     pic: <RiShoppingBag4Line className="w-6 h-6 text-text"/>
-    },
-    {name: 'Music',
-     pic: <IoIosMusicalNote className="w-6 h-6 text-text"/>
-    },
-    {name: 'Movies',
-     pic: <MdOutlineLocalMovies className="w-6 h-6 text-text"/>
-    },
-    {name: 'Live',
-     pic: <MdOutlineLiveTv className="w-6 h-6 text-text"/>
-    },
-    {name: 'Gaming',
-     pic: <SiYoutubegaming className="w-6 h-6 text-text"/>
-    },
-    {name: 'News',
-     pic: <FaNewspaper className="w-6 h-6 text-text"/>
-    },
-    {name: 'Sports',
-     pic: <IoTrophyOutline className="w-6 h-6 text-text"/>
-    },
-    {name: 'Courses',
-     pic: <FaRegLightbulb className="w-6 h-6 text-text"/>
-    },
-    {name: 'Fashion & Beauty',
-     pic: <GiHanger className="w-6 h-6 text-text"/>
-    },
-    {name: 'Podcasts',
-     pic: <FaPodcast className="w-6 h-6 text-text"/>
-    },
-  ]
+    { name: 'Trending', pic: <IoIosTrendingUp className="w-6 h-6 text-text" /> },
+    { name: 'Shopping', pic: <RiShoppingBag4Line className="w-6 h-6 text-text" /> },
+    { name: 'Music', pic: <IoIosMusicalNote className="w-6 h-6 text-text" /> },
+    { name: 'Movies', pic: <MdOutlineLocalMovies className="w-6 h-6 text-text" /> },
+    { name: 'Live', pic: <MdOutlineLiveTv className="w-6 h-6 text-text" /> },
+    { name: 'Gaming', pic: <SiYoutubegaming className="w-6 h-6 text-text" /> },
+    { name: 'News', pic: <FaNewspaper className="w-6 h-6 text-text" /> },
+    { name: 'Sports', pic: <IoTrophyOutline className="w-6 h-6 text-text" /> },
+    { name: 'Courses', pic: <FaRegLightbulb className="w-6 h-6 text-text" /> },
+    { name: 'Fashion & Beauty', pic: <GiHanger className="w-6 h-6 text-text" /> },
+    { name: 'Podcasts', pic: <FaPodcast className="w-6 h-6 text-text" /> },
+  ];
 
-  // Small Search
+  const lastSide = [
+    { name: 'Settings', pic: <CiSettings className="w-6 h-6 text-text" /> },
+    { name: 'Report History', pic: <MdOutlineFlag className="w-6 h-6 text-text" /> },
+    { name: 'Help', pic: <GoQuestion className="w-6 h-6 text-text" /> },
+    { name: 'Sent Feedback', pic: <IoMdInformationCircleOutline className="w-6 h-6 text-text" /> },
+  ];
+
+  // Small Screen Search Handler
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 428 && open) {
         setOpen(false);
       }
     };
-
     window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, [open]);
 
-  // SideBar
+  // Sidebar expand/collapse
   useEffect(() => {
-    const handleResize = () => {
-      setExpand(window.innerWidth > 1024);
-    };
-
+    const handleResize = () => setExpand(window.innerWidth > 1024);
     window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <section>
-      <nav className="flex flex-col">
+      <nav className="grid grid-row-[56px_1fr] h-screen">
         {!open ? (
-          <div className="h-14 w-full bg-background pl-0 after358:pl-6 pr-6 flex items-center overflow-hidden justify-between">
+          <div className="h-14 w-full bg-background pl-0 after358:pl-6 pr-6 flex items-center overflow-hidden justify-between sticky top-0 left-0 z-40">
             {/* Logo and SideBar Toggle Button */}
             <div className="flex items-center">
               <button
@@ -169,7 +125,7 @@ function NavigationBar() {
             </button>
           </div>
         ) : (
-          <div className="after428:hidden pl-6 w-full h-14 bg-background pr-6 flex items-center overflow-hidden justify-between">
+          <div className="after428:hidden pl-6 w-full h-14 bg-background pr-6 flex items-center overflow-hidden justify-between fixed z-40">
             <SearchInput />
             <button
               onClick={() => setOpen(!open)}
@@ -181,51 +137,55 @@ function NavigationBar() {
         )}
 
         {/* Main Section */}
-        <main
-          className={`grid ${
-            expand ? "grid-cols-[240px_1fr]" : "grid-cols-[50px_1fr]"
-          }`}
-        >
-          <aside>
-            <div
-              className={`bg-background h-screen ${
-                expand ? "max-w-[240px]" : "max-w-[50px]"
-              } overflow-hidden pt-5 relative`}
-            >
-                  {MainSideContent.map((item, index) => (
-                    <NavLink
-                      key={index} 
-                      onClick={() => setActiveIndex(index)} // Set active index on click
-                      to={item.path}
-                      className={`
-                        ${expand 
-                          ? `flex w-56 h-10 hover:bg-Hover items-center pl-3 mb-2 ${activeIndex === index ? "bg-Hover text-white" : "bg-transparent"}` 
-                          : "grid grid-rows-1 w-full h-12 justify-center items-center hover:bg-Hover mb-8"}
-                        rounded-lg
-                      `}
-                    >
-                        {item.activeFalse}
+        <main className={`grid ${expand ? "grid-cols-[240px_1fr]" : "grid-cols-[50px_1fr]"} h-[calc(100vh-56px)]`}>
 
-                      <p className={`text-text font-roboto pt-1 ${expand ? "text-NormSideNav pl-6" : "text-SmallSideNav"}`}>
-                        {item.name}
-                      </p>
-                    </NavLink>
-                ))};
-                  <div className={`${expand ? "block" : "hidden"}`}>
+          <aside className={`bg-background ${expand ? "max-w-[240px]" : "max-w-[50px]"} pt-5 overflow-y-auto sidebar h-screen`}>
+            <div>
+              {MainSideContent.map((item, index) => (
+                <NavLink
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  to={item.path}
+                  className={`
+                    ${expand 
+                      ? `flex w-56 h-10 hover:bg-Hover items-center pl-3 mb-2 ${activeIndex === index ? "bg-Hover text-white" : "bg-transparent"}` 
+                      : "grid grid-rows-1 w-full h-12 justify-center items-center hover:bg-Hover mb-8"}
+                    rounded-lg
+                  `}
+                >
+                  {item.activeFalse}
+                  <p className={`text-text font-roboto pt-1 ${expand ? "text-NormSideNav pl-6" : "text-SmallSideNav"}`}>
+                    {item.name}
+                  </p>
+                </NavLink>
+              ))}
 
-                     <h2 className="text-text text-lg pl-5 font-bold mb-3">Explore</h2>
-                         {explore.map((item, index) => (
-                             <div key={index} className="flex w-56 h-10 hover:bg-Hover items-center pl-3 mb-1 rounded-lg">
-                                {item.pic}
-                                <p className="ml-3 text-text text-sm">{item.name}</p>
-                             </div>
-                         ))}
+              <div className={`border-t-2 ml-1 mb-4 mt-4 border-Hover ${expand ? "block" : "hidden"}`}></div>
+
+              <div className={`${expand ? "block" : "hidden"}`}>
+                <h2 className="text-text text-lg pl-5 font-bold mb-3">Explore</h2>
+                {explore.map((item, index) => (
+                  <div key={index} className="flex w-56 h-10 hover:bg-Hover items-center pl-3 mb-1 rounded-lg">
+                    {item.pic}
+                    <p className="ml-3 text-text text-sm">{item.name}</p>
                   </div>
+                ))}
+              </div>
 
+              <div className={`border-t-2 ml-1 mb-4 mt-4 border-Hover ${expand ? "block" : "hidden"}`}></div>
+
+              <div className={`${expand ? "block" : "hidden"}`}>
+                {lastSide.map((item, index) => (
+                  <div key={index} className="flex w-56 h-10 hover:bg-Hover items-center pl-3 mb-1 rounded-lg">
+                    {item.pic}
+                    <p className="ml-3 text-text text-sm">{item.name}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </aside>
 
-          <div >
+          <div className="min-h-full z-10">
             <Outlet />
           </div>
         </main>
@@ -235,5 +195,3 @@ function NavigationBar() {
 }
 
 export default NavigationBar;
-
-
