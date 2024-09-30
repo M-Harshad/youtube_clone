@@ -22,9 +22,10 @@ import { GiHanger } from "react-icons/gi";
 import { CiSettings } from "react-icons/ci";
 import { GoQuestion } from "react-icons/go";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import { useGlobalState } from "../GlobalState";
 
 function NavigationBar() {
-  const [expand, setExpand] = useState(true);
+  const {expand, setExpand} = useGlobalState();
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
