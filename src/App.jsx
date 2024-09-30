@@ -1,15 +1,16 @@
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-import NavigationBar from "./Pages/NavigationBar";
+import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Shorts from "./Pages/Shorts";
 import Subs from "./Pages/Subs";
+import Video from "./Pages/Video";
 
 
 const router = createBrowserRouter([
 
   {
     path: "/",
-    element: <NavigationBar />,
+    element: <Dashboard />,
     children: [{
       path: "/",
       element: <Home />,
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
       path: "/subs",
       element: <Subs />,
+    },
+    {
+       path: "/video/:id",
+       element: <Video />
     },
   ]
   },

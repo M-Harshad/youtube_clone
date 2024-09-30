@@ -24,7 +24,7 @@ import { GoQuestion } from "react-icons/go";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { useGlobalState } from "../GlobalState";
 
-function NavigationBar() {
+function Dashboard() {
   const {expand, setExpand} = useGlobalState();
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -76,10 +76,10 @@ function NavigationBar() {
   }, []);
 
   return (
-    <section>
-      <nav className="grid grid-row-[56px_1fr] h-screen">
+    <section className="grid grid-row-[56px_1fr] h-screen">
+      <nav className="sticky top-0 left-0 z-40" >
         {!open ? (
-          <div className="h-14 w-full bg-background pl-0 after358:pl-6 pr-6 flex items-center overflow-hidden justify-between sticky top-0 left-0 z-40">
+          <div className="h-14 w-full bg-background pl-0 after358:pl-6 pr-6 flex items-center overflow-hidden justify-between ">
             {/* Logo and SideBar Toggle Button */}
             <div className="flex items-center">
               <button
@@ -137,10 +137,13 @@ function NavigationBar() {
           </div>
         )}
 
+      </nav>
         {/* Main Section */}
-        <main className={`grid ${expand ? "grid-cols-[240px_1fr]" : "grid-cols-[50px_1fr]"} h-[calc(100vh-56px)]`}>
+        <div  className={`grid  ${expand ? "grid-cols-[240px_1fr]" : "grid-cols-[50px_1fr]"} relative`}>
 
-          <aside className={`bg-background ${expand ? "max-w-[240px]" : "max-w-[50px]"} pt-5 overflow-y-auto sidebar h-screen`}>
+        <main className="sticky top-0 left-0">
+
+          <aside className={`bg-background ${expand ? "max-w-[240px]" : "max-w-[50px]"} pt-5 overflow-y-auto sidebar`}>
             <div>
               {MainSideContent.map((item, index) => (
                 <NavLink
@@ -186,13 +189,13 @@ function NavigationBar() {
             </div>
           </aside>
 
-          <div className="min-h-full z-10">
+        </main>
+          <div className="h-screen z-10">
             <Outlet />
           </div>
-        </main>
-      </nav>
+        </div>
     </section>
   );
 }
 
-export default NavigationBar;
+export default Dashboard;
