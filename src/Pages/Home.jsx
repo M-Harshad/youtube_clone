@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useGlobalState } from "../GlobalState";
+import { useGlobalState } from "../globalState/GlobalState";
 import { ApiKey, ApiKey1 } from "../Data";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";

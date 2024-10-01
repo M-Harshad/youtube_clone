@@ -13,8 +13,9 @@ export function useGlobalState() {
 export function GlobalStateProvider({ children }) {
   const [expand, setExpand] = useState(true);
 
+
   return (
-    <GlobalStateContext.Provider value={{ expand, setExpand }}>
+    <GlobalStateContext.Provider value={{ expand, setExpand,}}>
       {children}
     </GlobalStateContext.Provider>
   );
