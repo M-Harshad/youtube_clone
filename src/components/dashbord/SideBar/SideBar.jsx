@@ -1,4 +1,4 @@
-import { useGlobalState } from "../../globalState/GlobalState";
+import { useGlobalState } from "../../../globalState/GlobalState";
 import { useState, useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { GoHome } from "react-icons/go";

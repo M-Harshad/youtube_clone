@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ApiKey } from '../Data'; // Import your API key
+import { ApiKey, ApiKey1 } from '../Data'; // Import your API key
 
 const VideoPlayer = () => {
     const { id } = useParams(); // Get the video ID from the URL

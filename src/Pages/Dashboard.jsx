@@ -1,10 +1,10 @@
 
 import { useGlobalState } from "../globalState/GlobalState";
 import { Outlet } from "react-router-dom";
-import NavBar from "../components/dashbord/NavBar";
-import SmallNav from "../components/dashbord/SmallNav";
-import SideBar from "../components/dashbord/SideBar";
+import SideBar from "../components/dashbord/SideBar/SideBar";
 import { useState,useEffect } from "react";
+import NavBar from "../components/dashbord/NavBar/NavBar";
+import SmallNav from "../components/dashbord/NavBar/SmallNav";
 
 function Dashboard() {
   const {expand, setExpand} = useGlobalState();
@@ -32,35 +32,28 @@ function Dashboard() {
   }, []);
 
   return (
-//     <section className="grid grid-cols-[auto_1fr] relative">
-//     <aside className="sticky" >
-//         <SideBar />
-//     </aside>
-//     <main className="grid grid-rows-[56px,1fr] relative">
-//         <nav className="sticky top-0 left-0 bg-white z-10">
-//             {!open ? (
-//                 <NavBar open={open} setOpen={setOpen} />
-//             ) : (
-//                 <SmallNav open={open} setOpen={setOpen} />
-//             )}
-//         </nav>
-//         <section className="overflow-auto">
-//             <Outlet />
-//         </section>
-//     </main>
-// </section>
+
 <section>
-<nav>
+ <nav>
+
         {!open ? (
             <NavBar open={open} setOpen={setOpen}  className="sticky top-0 left-0"/>
           ) : (
             <SmallNav open={open} setOpen={setOpen} />
          )}
-         <div className="grid grid-cols-[auto_1fr] relative">
+      <div className="grid grid-cols-[auto_1fr] h-screen relative">
+      
+        <div className="sticky top-0 h-screen">
+          <SideBar />
+        </div>
 
-              <SideBar className="sticky"/>
-              <Outlet />
-         </div>
+        {/* Main Content, scrollable */}
+        <div className="overflow-y-auto">
+          <Outlet />
+        </div>
+
+      </div>
+
   </nav>
 </section>
 

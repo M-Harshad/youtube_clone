@@ -1,5 +1,5 @@
 import SearchInput from "./SearchInput"
-import { useGlobalState } from "../../globalState/GlobalState";
+import { useGlobalState } from "../../../globalState/GlobalState";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import { FaSearch } from "react-icons/fa";
 import { MdKeyboardVoice } from "react-icons/md";

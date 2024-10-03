@@ -6,8 +6,8 @@ function Video() {
     return (
         <div className='w-full h-full bg-background'>
             <iframe
-                width="450px"
-                height="500"
+                width="100%"
+                height="100%"
                 src={`https://www.youtube.com/embed/${id}`}
                 title="YouTube video player"
                 frameBorder="0"

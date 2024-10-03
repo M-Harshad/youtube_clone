@@ -1,4 +1,4 @@
-import { useGlobalState } from "../../globalState/GlobalState";
+import { useGlobalState } from "../../../globalState/GlobalState";
 import { IoMdClose } from "react-icons/io";
 import SearchInput from "./SearchInput";
 

@@ -2,7 +2,7 @@
 
 function Shorts() {
   return (
-    <div className='h-full bg-amber-200'>shorts</div>
+    <div className='h-[3000px] w-full bg-amber-200'>shorts</div>
   )
 }
 
